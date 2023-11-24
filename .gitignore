@@ -1,0 +1,6 @@
+# Otros patrones de ignorar...
+
+# Ignorar la carpeta venv
+venv/
+
+# Otros patrones de ignorar...
