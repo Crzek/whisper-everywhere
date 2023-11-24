@@ -1,10 +1,6 @@
 # Run
 
 Navigate to the root of the project and create the Whisper image:
-
-```shell
-docker run -it -v /path/to/your/videos:/path/in/the/container image_nam
-
 ```shell
 docker build -t whisper .
 ```
