@@ -8,7 +8,7 @@ docker build -t whisper .
 Run the container with a volume where your videos are located:
 
 ```shell
-docker run -it -v /path/to/your/videos:/path/in/the/container image_name
+docker run -it -v /path/to/your/videos:/path/in/the/container whisper
 ```
 
 
