@@ -2,7 +2,7 @@
 
 Navigate to the root of the project and create the Whisper image:
 ```shell
-docker build -t whisper .
+docker build -t whisper -f Dockerfile-whisper .
 ```
 
 Run the container with a volume where your videos are located:
