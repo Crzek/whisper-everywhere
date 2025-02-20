@@ -1,0 +1,21 @@
+# Primera Etapa: Instalación de dependencias y construcción del entorno
+FROM python:3.9.18-slim-bullseye AS builder
+
+# Actualizamos el sistema
+RUN apt-get update && apt-get upgrade -y \
+    && apt install -y --no-install-recommends ffmpeg \
+    && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /usr/src/app
+
+# Copiamos el archivo de requisitos e instalamos las dependencias
+COPY ./requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir -U openai-whisper
+
+VOLUME  ["./media", "./.env"]
+COPY main.py .
+
+# Punto de entrada de la imagen final
+# CMD [ "python3", "main.py" ]
+CMD [ "sleep", "infinity" ]
